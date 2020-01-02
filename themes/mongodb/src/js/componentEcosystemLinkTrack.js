@@ -8,7 +8,7 @@ export function setup() {
         anchors.forEach(function(anchorElement) {
             anchorElement.addEventListener('click', reportAnalytics('Link Clicked', {
                 'text': anchorElement.text,
-                'href': anchorElement.href
+                'href': anchorElement.href,
             }));
         });
     }
