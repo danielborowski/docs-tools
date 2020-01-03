@@ -1,10 +1,10 @@
-import {reportAnalytics, toArray} from './util';
+import {reportAnalytics} from './util';
 
 function reportClick(anchorElement) {
     reportAnalytics('Link Clicked', {
         'text': anchorElement.text,
-        'href': anchorElement.href,
-    })
+        'href': anchorElement.href
+    });
 }
 
 export function setup() {
