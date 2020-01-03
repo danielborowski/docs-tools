@@ -11,9 +11,10 @@ export function setup() {
     // only on ecosystem homepage, track link clicks
     if (document.body.dataset && document.body.dataset.project === 'ecosystem' && window.location.href === 'https://docs.mongodb.com/ecosystem/') {
         // get links on ecosystem
-        const anchors = toArray(document.getElementsByTagName('a'));
-        anchors.forEach(function(anchorElement) {
-            anchorElement.addEventListener('click', reportClick.bind(this, anchorElement));
-        });
+        const anchors = document.querySelectorAll('a.external');
+        for (let i = 0; i < anchors.length; i += 1) {
+            const anchor = anchors[i];
+            anchor.addEventListener('click', reportClick.bind(this, anchor));
+        }
     }
 }
